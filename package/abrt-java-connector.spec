@@ -25,7 +25,7 @@ Requires:	abrt
 
 %description
 JNI library providing an agent capable to process both caught and uncaught
-exceptions and transform them to ABRT problems
+exceptions and transform them to ABRT problems.
 
 %package container
 Summary: JNI Agent library converting Java exceptions to ABRT problems (minimal version)
