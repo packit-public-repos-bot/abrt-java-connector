@@ -1,15 +1,15 @@
-%global commit 230b72697c7c43db747b2644b17cb2685d1539de
+%global commit cbd081ad9a340eee558644352ccafedb18df8fe6
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:		abrt-java-connector
-Version:	1.1.0
+Version:	1.1.1
 Release:	1%{?dist}
 Summary:	JNI Agent library converting Java exceptions to ABRT problems
 
 Group:		System Environment/Libraries
 License:	GPLv2+
-URL:		https://github.com/jfilak/abrt-java-connector
-Source0:	https://github.com/jfilak/%{name}/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
+URL:		https://github.com/abrt/abrt-java-connector
+Source0:	https://github.com/abrt/%{name}/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
 
 BuildRequires:	cmake
 BuildRequires:	satyr-devel
@@ -91,6 +91,13 @@ make test || {
 
 
 %changelog
+* Wed May 16 2018 Matej Habrnal <mhabrnal@redhat.com> - 1.1.1-1
+- Add possibility report reports problems to CEL
+- Upate test results
+- Change log() to log_warning()
+- Correct includes for ABRT
+- Make the dependency on systemd optional
+
 * Wed Oct 29 2014 Jakub Filak <jfilak@redhat.com> - 1.1.0-1
 - Support java-1.8-openjdk
 - Install the library to /usr/lib/abrt-java-connector on all arches
