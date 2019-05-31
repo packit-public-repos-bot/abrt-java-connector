@@ -304,7 +304,7 @@ add_test(test_no_log_file make run_no_log_file)
 
 add_custom_target(
     run_log_file_in_directory
-    COMMAND rm -rf ${CMAKE_CURRENT_BINARY_DIR}/lid && mkdir ${CMAKE_CURRENT_BINARY_DIR}/lid && LD_LIBRARY_PATH=${CMAKE_BINARY_DIR}/src ${Java_JAVA_EXECUTABLE} -agentlib:${AGENT_NAME}=output=${CMAKE_CURRENT_BINARY_DIR}/lid Test || test -n `find ${CMAKE_CURRENT_BINARY_DIR}/lid -name "abrt_checker_*.log"`
+    COMMAND rm -rf ${CMAKE_CURRENT_BINARY_DIR}/lid && mkdir ${CMAKE_CURRENT_BINARY_DIR}/lid && LD_LIBRARY_PATH=${CMAKE_BINARY_DIR}/src ${Java_JAVA_EXECUTABLE} -agentlib:${AGENT_NAME}=output=${CMAKE_CURRENT_BINARY_DIR}/lid Test || test -n "$(find ${CMAKE_CURRENT_BINARY_DIR}/lid -name \"abrt_checker_*.log\")"
     DEPENDS AbrtChecker ${TEST_JAVA_TARGETS}
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 )
@@ -312,7 +312,7 @@ add_test(test_log_file_in_directory make run_log_file_in_directory)
 
 add_custom_target(
     run_default_no_log_file
-    COMMAND LD_LIBRARY_PATH=${CMAKE_BINARY_DIR}/src ${Java_JAVA_EXECUTABLE} -agentlib:${AGENT_NAME} Test || test -z "`find -name abrt_checker_*.log`"
+    COMMAND LD_LIBRARY_PATH=${CMAKE_BINARY_DIR}/src ${Java_JAVA_EXECUTABLE} -agentlib:${AGENT_NAME} Test || test -z "$(find -name abrt_checker_*.log)"
     DEPENDS AbrtChecker ${TEST_JAVA_TARGETS}
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 )
