@@ -1308,7 +1308,7 @@ static char *get_main_class(
         if (realpath(class_name, jarpath) == NULL)
         {
             fprintf(stderr, "Error %d: Could get real path of '%s'\n", errno, class_name);
-            strncpy(jarpath, class_name, sizeof(jarpath));
+            strncpy(jarpath, class_name, PATH_MAX);
         }
 
         char *executable = strdup(jarpath);
