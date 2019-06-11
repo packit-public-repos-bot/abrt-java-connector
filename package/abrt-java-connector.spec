@@ -1,8 +1,8 @@
-%global commit cbd081ad9a340eee558644352ccafedb18df8fe6
+%global commit bef7e39ce5fdc4a8a620d56be186d4463ed761a8
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:		abrt-java-connector
-Version:	1.1.1
+Version:	1.1.2
 Release:	1%{?dist}
 Summary:	JNI Agent library converting Java exceptions to ABRT problems
 
@@ -91,6 +91,10 @@ make test || {
 
 
 %changelog
+* Tue 11 Jun 2019 Martin Kutlak <mkutlak@redhat.com> - 1.1.2-1
+- Fix gcc string truncation warning for strncpy
+- Replace legacy backticked with $() notation
+
 * Wed May 16 2018 Matej Habrnal <mhabrnal@redhat.com> - 1.1.1-1
 - Add possibility report reports problems to CEL
 - Upate test results
