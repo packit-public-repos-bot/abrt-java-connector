@@ -41,7 +41,7 @@
 #include <errno.h>
 #include <syslog.h>
 
-#if HAVE_SYSTEMD_JOURNAL
+#if HAVE_SYSTEMD
 #include <systemd/sd-journal.h>
 #endif
 
@@ -802,7 +802,7 @@ static void report_stacktrace(
         syslog(LOG_ERR, "%s\n%s", message, stacktrace);
     }
 
-#if HAVE_SYSTEMD_JOURNAL
+#if HAVE_SYSTEMD
     if (globalConfig.reportErrosTo & ED_JOURNALD)
     {
         VERBOSE_PRINT("Reporting stack trace to JournalD\n");
