@@ -42,7 +42,7 @@ This package contains only minimal set of files needed for container exception
 logging.
 
 %prep
-%setup -qn %{name}-%{commit}
+%autosetup -n %{name}-%{commit}
 
 
 %build
