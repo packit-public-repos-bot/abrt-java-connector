@@ -15,6 +15,7 @@ BuildRequires: abrt-devel
 BuildRequires: check-devel
 BuildRequires: cmake
 BuildRequires: gcc
+BuildRequires: gcc-c++
 BuildRequires: gettext
 BuildRequires: java-devel
 BuildRequires: libreport-devel
