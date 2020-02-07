@@ -1,27 +1,27 @@
 %global commit bef7e39ce5fdc4a8a620d56be186d4463ed761a8
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
-Name:		abrt-java-connector
-Version:	1.1.2
-Release:	1%{?dist}
-Summary:	JNI Agent library converting Java exceptions to ABRT problems
+Name:          abrt-java-connector
+Version:       1.1.3
+Release:       1%{?dist}
+Summary:       JNI Agent library converting Java exceptions to ABRT problems
 
-Group:		System Environment/Libraries
-License:	GPLv2+
-URL:		https://github.com/abrt/abrt-java-connector
-Source0:	https://github.com/abrt/%{name}/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
+Group:         System Environment/Libraries
+License:       GPLv2+
+URL:           https://github.com/abrt/abrt-java-connector
+Source0:       https://github.com/abrt/%{name}/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
 
-BuildRequires:	cmake
-BuildRequires:	satyr-devel
-BuildRequires:	libreport-devel
-BuildRequires:	abrt-devel
-BuildRequires:	java-devel
-BuildRequires:	systemd-devel
-BuildRequires:	gettext
-BuildRequires:	check-devel
-BuildRequires:	rpm-devel
+BuildRequires: cmake
+BuildRequires: satyr-devel
+BuildRequires: libreport-devel
+BuildRequires: abrt-devel
+BuildRequires: java-devel
+BuildRequires: systemd-devel
+BuildRequires: gettext
+BuildRequires: check-devel
+BuildRequires: rpm-devel
 
-Requires:	abrt
+Requires:      abrt
 
 %description
 JNI library providing an agent capable to process both caught and uncaught
@@ -91,6 +91,9 @@ make test || {
 
 
 %changelog
+* Fri Feb 07 2020 Ernestas Kulik <ekulik@redhat.com> - 1.1.3-1
+- Fix stack traces not being logged in journald
+
 * Tue Jun 11 2019 Martin Kutlak <mkutlak@redhat.com> - 1.1.2-1
 - Fix gcc string truncation warning for strncpy
 - Replace legacy backticked with $() notation
