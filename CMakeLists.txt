@@ -1,10 +1,12 @@
 cmake_minimum_required(VERSION 2.8)
-
-project(abrt-java-connector)
-enable_testing()
+cmake_policy(SET CMP0048 NEW)
 
 # Beware, PROJECT_VERSION will be overridden by information from git
-set(PROJECT_VERSION "1.1.3")
+project(
+    abrt-java-connector
+    VERSION 1.1.3
+    LANGUAGES C)
+enable_testing()
 
 message("Configuring ${PROJECT_NAME}-${PROJECT_VERSION} on ${CMAKE_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR}")
 
