@@ -32,7 +32,7 @@
 /*
  * Shared mutex for synchronization of writing.
  */
-pthread_mutex_t abrt_print_mutex __UNUSED_VAR;
+extern pthread_mutex_t abrt_print_mutex;
 
 
 #ifdef VERBOSE

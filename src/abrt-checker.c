@@ -214,6 +214,8 @@ T_jthreadMap *uncaughtExceptionMap;
 /* Configuration */
 T_configuration globalConfig;
 
+pthread_mutex_t abrt_print_mutex = PTHREAD_MUTEX_INITIALIZER;
+
 /* forward headers */
 static char* get_path_to_class(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jclass class, char *class_name, const char *stringize_method_name);
 static void print_jvm_environment_variables_to_file(FILE *out);
