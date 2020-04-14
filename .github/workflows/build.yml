@@ -9,6 +9,7 @@ jobs:
     container:
       image: fedora:latest
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Check out sources
         uses: actions/checkout@v2
