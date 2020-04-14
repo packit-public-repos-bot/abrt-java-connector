@@ -26,6 +26,6 @@ jobs:
 
       - name: Run tests
         run: |
-          sudo dnf install abrt
+          sudo dnf --assumeyes install abrt
           sudo abrtd
           make -C build test
