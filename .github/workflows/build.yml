@@ -15,7 +15,7 @@ jobs:
 
       - name: Install build dependencies
         run: |
-          sudo dnf --assumeyes install dnf-plugins-core
+          sudo dnf --assumeyes install @c-development dnf-plugins-core
           sudo dnf builddep --assumeyes --spec package/abrt-java-connector.spec
 
       - name: Build
