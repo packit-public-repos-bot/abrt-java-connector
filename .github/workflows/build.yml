@@ -16,8 +16,8 @@ jobs:
 
       - name: Install build dependencies
         run: |
-          sudo dnf --assumeyes install @c-development dnf-plugins-core
-          sudo dnf builddep --assumeyes --spec package/abrt-java-connector.spec
+          dnf --assumeyes install @c-development dnf-plugins-core
+          dnf builddep --assumeyes --spec package/abrt-java-connector.spec
 
       - name: Build
         run: |
@@ -26,6 +26,6 @@ jobs:
 
       - name: Run tests
         run: |
-          sudo dnf --assumeyes install abrt
-          sudo abrtd
+          dnf --assumeyes install abrt
+          abrtd
           make -C build test ARGS=--output-on-failure
