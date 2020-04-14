@@ -19,13 +19,16 @@ jobs:
           dnf --assumeyes install @c-development dnf-plugins-core
           dnf builddep --assumeyes --spec package/abrt-java-connector.spec
 
+      - name: Create build user
+        run: useradd --no-create-home runner
+
       - name: Build
         run: |
-          cmake -S . -B build
-          make -C build
+          sudo -u runner cmake -S . -B build
+          sudo -u runner make -C build
 
       - name: Run tests
         run: |
           dnf --assumeyes install abrt
           abrtd
-          make -C build test ARGS=--output-on-failure
+          sudo -u runner make -C build test ARGS=--output-on-failure
