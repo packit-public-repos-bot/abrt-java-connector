@@ -25,4 +25,7 @@ jobs:
           make -C build
 
       - name: Run tests
-        run: make -C build test
+        run: |
+          sudo dnf install abrt
+          sudo abrtd
+          make -C build test
