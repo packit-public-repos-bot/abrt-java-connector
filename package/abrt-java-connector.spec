@@ -11,14 +11,14 @@ License:       GPLv2+
 URL:           https://github.com/abrt/abrt-java-connector
 Source0:       https://github.com/abrt/%{name}/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
 
-BuildRequires: abrt-devel
+BuildRequires: pkgconfig(abrt) >= 2.14.1
 BuildRequires: check-devel
 BuildRequires: cmake
 BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: gettext
 BuildRequires: java-devel
-BuildRequires: libreport-devel
+BuildRequires: pkgconfig(libreport) >= 2.13.0
 BuildRequires: rpm-devel
 BuildRequires: satyr-devel
 BuildRequires: systemd-devel

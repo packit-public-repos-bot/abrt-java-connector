@@ -74,8 +74,8 @@ add_custom_target(
 
 include(FindPkgConfig)
 pkg_check_modules(PC_SATYR REQUIRED satyr)
-pkg_check_modules(PC_LIBREPORT REQUIRED libreport)
-pkg_check_modules(PC_ABRT REQUIRED abrt)
+pkg_check_modules(PC_LIBREPORT REQUIRED libreport>=2.13.0)
+pkg_check_modules(PC_ABRT REQUIRED abrt>=2.14.1)
 
 add_definitions(-D_GNU_SOURCE)
 set(AJC_ENABLE_NLS true)
