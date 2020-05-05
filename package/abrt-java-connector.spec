@@ -2,7 +2,7 @@
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:          abrt-java-connector
-Version:       1.1.4
+Version:       1.1.5
 Release:       1%{?dist}
 Summary:       JNI Agent library converting Java exceptions to ABRT problems
 
@@ -93,6 +93,9 @@ make test || {
 
 
 %changelog
+* Tue May 05 2020 Michal Fabik <mfabik@redhat.com> - 1.1.5-1
+- Add namespace to libreport function and global names
+
 * Fri Feb 07 2020 Ernestas Kulik <ekulik@redhat.com> - 1.1.4-1
 - Fix build failure with GCC 10
 
