@@ -1,5 +1,5 @@
 Caught exception java.lang.ArrayIndexOutOfBoundsException in method com.redhat.abrt.test.Test.throwIndexOutOfBoundsException()
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 42
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 42 out of bounds for length 10
 	at com.redhat.abrt.test.Test.throwIndexOutOfBoundsException(Test.java:26) [file:@CMAKE_BINARY_DIR@/test/com/redhat/abrt/test/Test.class]
 	at com.redhat.abrt.test.Test.catchIndexOutOfBoundsException(Test.java:49) [file:@CMAKE_BINARY_DIR@/test/com/redhat/abrt/test/Test.class]
 	at com.redhat.abrt.test.Test.throwAndCatchAllExceptions(Test.java:63) [file:@CMAKE_BINARY_DIR@/test/com/redhat/abrt/test/Test.class]
