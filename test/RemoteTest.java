@@ -83,19 +83,17 @@ public class RemoteTest {
         input.close();
 
         try {
-            Method method = URLClassLoader.class.getDeclaredMethod("addURL", new Class[]{URL.class});
-            method.setAccessible(true);
-            method.invoke(ClassLoader.getSystemClassLoader(), new Object[]{remoteJarUrl});
+            ClassLoader loader = URLClassLoader.newInstance(new URL[]{remoteJarUrl}, ClassLoader.getSystemClassLoader());
             /* Loaded these classes into cache. */
             final String needed[] = {"SimpleTest", "ThreadUncaughtException", "ThreadCaughtException"};
             for (String requiredClass : needed) {
-                if (null == Class.forName(requiredClass)) {
+                if (null == Class.forName(requiredClass, true, loader)) {
                     System.out.println("Cannot get required class: " + requiredClass);
                     System.exit(1);
                 }
             }
 
-            testClassInstance = Class.forName(testClassName);
+            testClassInstance = Class.forName(testClassName, true, loader);
         }
         finally {
             server.stop(0);
