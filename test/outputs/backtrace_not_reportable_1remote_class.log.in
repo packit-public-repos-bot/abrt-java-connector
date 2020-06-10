@@ -1,4 +1,4 @@
-Exception in thread "Thread-3" java.lang.ArrayIndexOutOfBoundsException: 42
+Exception in thread "Thread-3" java.lang.ArrayIndexOutOfBoundsException: Index 42 out of bounds for length 10
 >---at SimpleTest.throwIndexOutOfBoundsException(SimpleTest.java:24) [jar:http://localhost:54321/JarTest.jar!/SimpleTest.class]
 >---at SimpleTest.catchIndexOutOfBoundsException(SimpleTest.java:47) [jar:http://localhost:54321/JarTest.jar!/SimpleTest.class]
 >---at SimpleTest.throwAndCatchAllExceptions(SimpleTest.java:61) [jar:http://localhost:54321/JarTest.jar!/SimpleTest.class]
