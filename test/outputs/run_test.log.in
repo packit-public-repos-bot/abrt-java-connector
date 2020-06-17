@@ -138,7 +138,7 @@ Exception in thread "main" java.lang.UnsatisfiedLinkError: Expecting an absolute
 	at Test.main(Test.java:515) [file:@CMAKE_BINARY_DIR@/test/Test.class]
 executable: @CMAKE_BINARY_DIR@/test/Test.class
 Caught exception java.lang.UnsatisfiedLinkError in method java.lang.ClassLoader.loadLibrary()
-Exception in thread "main" java.lang.UnsatisfiedLinkError: no xyzzy in java.library.path
+Exception in thread "main" java.lang.UnsatisfiedLinkError: no xyzzy in java.library.path: [PATHS]
 	at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:LINENO) [jrt:/java.base/java/lang/ClassLoader.class]
 	at java.base/java.lang.Runtime.loadLibrary0(Runtime.java:LINENO) [jrt:/java.base/java/lang/Runtime.class]
 	at java.base/java.lang.System.loadLibrary(System.java:LINENO) [jrt:/java.base/java/lang/System.class]

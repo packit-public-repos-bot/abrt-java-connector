@@ -30,6 +30,7 @@ else
 fi
 
 sed -i "s/\(\.java:\)[0-9]\+\() \[jrt:.*\]\)/\1LINENO\2/" $TMP_RESULT
+sed -i 's/\(no .* in java\.library\.path: \)\[.*\]/\1[PATHS]/' $TMP_RESULT
 
 diff -u $3 $TMP_RESULT
 EC=$?
