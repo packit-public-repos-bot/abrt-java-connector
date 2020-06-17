@@ -16,7 +16,7 @@ jobs:
 
       - name: Install build dependencies
         run: |
-          dnf --assumeyes install @c-development dnf-plugins-core
+          dnf --assumeyes install @c-development diffutils dnf-plugins-core
           dnf builddep --assumeyes --spec package/abrt-java-connector.spec
 
       - name: Create build user
