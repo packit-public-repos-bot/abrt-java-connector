@@ -57,11 +57,11 @@ logging.
 
 %build
 %cmake -DCMAKE_BUILD_TYPE=Release
-%make_build
+%cmake_build
 
 
 %install
-%make_install
+%cmake_install
 
 %files
 %doc README AUTHORS
