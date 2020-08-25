@@ -3,7 +3,7 @@
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:          abrt-java-connector
-Version:       1.1.5
+Version:       1.2.0
 Release:       1%{?dist}
 Summary:       JNI Agent library converting Java exceptions to ABRT problems
 
@@ -24,7 +24,7 @@ BuildRequires: gcc-c++
 BuildRequires: gettext
 # Tests have been redone to work under Java 11, but they are not backwards-compatible.
 BuildRequires: java-11-devel
-BuildRequires: pkgconfig(libreport) >= 2.13.0
+BuildRequires: pkgconfig(libreport) >= 2.14.0
 BuildRequires: rpm-devel
 BuildRequires: satyr-devel
 BuildRequires: systemd-devel
@@ -103,6 +103,14 @@ make test || {
 
 
 %changelog
+* Tue Aug 25 2020 Michal Fabik <mfabik@redhat.com> - 1.2.0-1
+- Replace various libreport helper functions with GLib ones
+- Require java-11-devel for builds
+- Add indices to out-of-bounds exception output files
+- Drop unused test output files
+- Adapt to different exception messages in Java 11
+- Various minor fixes
+
 * Tue May 05 2020 Michal Fabik <mfabik@redhat.com> - 1.1.5-1
 - Add namespace to libreport function and global names
 
