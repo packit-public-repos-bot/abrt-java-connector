@@ -1,5 +1,5 @@
 Name:          abrt-java-connector
-Version:       1.2.0
+Version:       1.3.0
 Release:       1%{?dist}
 Summary:       JNI Agent library converting Java exceptions to ABRT problems
 
@@ -90,6 +90,10 @@ logging.
 
 
 %changelog
+* Mon Jan 17 2022 Matěj Grabovský <mgrabovs@redhat.com> 1.3.0-1
+- Bump libreport dependency to 2.14.0
+- Add make to build-time dependencies
+
 * Tue Aug 25 2020 Michal Fabik <mfabik@redhat.com> - 1.2.0-1
 - Replace various libreport helper functions with GLib ones
 - Require java-11-devel for builds

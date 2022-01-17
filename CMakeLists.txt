@@ -4,7 +4,7 @@ cmake_policy(SET CMP0048 NEW)
 # Beware, PROJECT_VERSION will be overridden by information from git
 project(
     abrt-java-connector
-    VERSION 1.2.0
+    VERSION 1.3.0
     LANGUAGES C)
 enable_testing()
 
