@@ -49,12 +49,16 @@ logging.
 %cmake_build
 
 
-%check
-%ctest
-
-
 %install
 %cmake_install
+
+
+%check
+cd "%{__cmake_builddir}"
+# Force serial execution of tests to prevent process interleaving which seems to
+# upset abrt-java-connector.
+%{__ctest} --output-on-failure -j1
+cd -
 
 
 %files
