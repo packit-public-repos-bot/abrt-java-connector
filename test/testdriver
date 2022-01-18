@@ -36,7 +36,7 @@ diff -u $3 $TMP_RESULT
 EC=$?
 
 if [ 0 -ne $EC ]; then
-    echo "Expected $3 differs from result $TMP_RESULT(origin $4)"
+    echo "Expected $3 differs from result $TMP_RESULT (origin $4)"
     exit 1
 fi
 
