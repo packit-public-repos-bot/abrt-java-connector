@@ -14,7 +14,7 @@
 
 
 
-OUT_DIR=bin
+OUT_DIR=_build
 
 all: run
 
